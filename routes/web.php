@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/mahasiswa', function () {
     return view('mahasiswa');
@@ -70,8 +71,10 @@ Route::fallback(function () {
 });
 
 
-use App\Http\Controllers\MahasiswaController;
+
 
 Route::get('/profil', [MahasiswaController::class, 'profil'])->name('mahasiswa.profil');
 Route::get('/mahasiswa', [MahasiswaController::class, 'daftar'])->name('mahasiswa.index');
 Route::get('/mahasiswa/{nim}', [MahasiswaController::class, 'detail'])->name('mahasiswa.detail');
+
+Route::get('/products',[ProductController::class, 'index']);
