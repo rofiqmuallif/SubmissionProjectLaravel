@@ -78,3 +78,10 @@ Route::get('/mahasiswa', [MahasiswaController::class, 'daftar'])->name('mahasisw
 Route::get('/mahasiswa/{nim}', [MahasiswaController::class, 'detail'])->name('mahasiswa.detail');
 
 Route::get('/products',[ProductController::class, 'index']);
+
+/*Route::get('/products/{id}',
+    function ($id) {
+        return 'Produk #' . $id;
+    });*/
+
+Route::get('/products/{id}', [ProductController::class,'show']);
